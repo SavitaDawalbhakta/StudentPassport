@@ -8,44 +8,6 @@ use steveclifton\phpcsrftokens\Csrf;
 require_once('includes/core.php');
 
 ?> 
-<?php
-
-		
-// if WT_insert is clicked then access the Oracle database and authenticate the user and start the session and redirect to start.php
-// else error messages UserFailed Authentication and redirect to index.php
-
-if(isset($_POST['WT_Insert'])){
-
-    $_SESSION['bannerid'] = $_POST['BannerID'];	
-
-   // echo $_SESSION['bannerid'];
-
-
-
-    // sql querry to get the student details
-		$sql_StudentDetails = "SELECT * FROM BANINST1.AT_AR_BALANCE_BY_ENTITY WHERE BANINST1.AT_AR_BALANCE_BY_ENTITY.ID = :BANNERID";
-		// parsing the querry with the connection string
-		$query_StudentDetails = oci_parse($conn, $sql_StudentDetails);
-		// bind the parameter BANNERID
-		OCIBindByName($query_StudentDetails,":BANNERID",$_SESSION['bannerid']);
-		// execute the query and generating result
-		$StudentDetails = oci_execute($query_StudentDetails);
-		// $row_StudentDetails contains an associative array having key value pairs
-		$row_StudentDetails = oci_fetch_array($query_StudentDetails, OCI_ASSOC);
-
-		oci_execute($query_StudentDetails);
-		oci_fetch_all($query_StudentDetails, $res);
-	
-		
-		$_SESSION['FirstName'] =str_replace("'", "", $row_StudentDetails['FIRST_NAME']);
-		$_SESSION['LastName'] = str_replace("'", "", $row_StudentDetails['LAST_NAME'] );
-		$_SESSION['FullName'] = $_SESSION['FirstName']." ".$_SESSION['LastName'];
-		
-        //echo $_SESSION['FullName'];
-}
-
-
-?>
 
    
 
@@ -143,13 +105,17 @@ if(isset($_POST['WT_Insert'])){
                             <?php echo sprintf($_SESSION['bannerid']); ?>
                             </div>
 
-        </div> <!-- row 1 ends -->
+        </div> <!-- row 2 ends -->
 
     
 
-</div> <!-- Jumbotron ends -->
+</div> <!-- Jumbotron 2 ends -->
 
+<div>
 
+<p><input name="logout" type="button" id="logout" class="btn btn-outline-danger"  value="Go Back" onclick="window.location='index.php';"/>
+                              </p>
+</div>
 
                                         
                         </div>
