@@ -138,15 +138,7 @@ if(isset($_POST['WT_Insert'])){
 
 
 	 }
-/*
-	 function test_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	 }
 
-*/
 	 //$_SESSION['bannerid'] = $_POST['BannerID'];	
 
 
