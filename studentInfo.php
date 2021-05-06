@@ -75,7 +75,7 @@ require_once('includes/core.php');
 
                                 
 
-                            </div> <!-- Jumbotron ends -->
+                            </div> <!-- Jumbotron 1 ends -->
 
                             <div class="jumbotron">
 
@@ -110,6 +110,42 @@ require_once('includes/core.php');
     
 
 </div> <!-- Jumbotron 2 ends -->
+
+
+<div class="jumbotron">
+
+<h6><u>REGISTRATION and BILLINGS & RECEIVABLES</u></h6>
+
+        <div class="row font-weight-bold ">
+
+                    <div class="col-sm-3">  
+
+                        <p class="text-right">Name:</p>
+
+                    </div>
+
+                    <div class="col-sm-3">
+                        <?php echo sprintf($_SESSION['FullName']); ?>
+                    </div>
+
+
+
+                    <div class="col-sm-3">  
+
+                            <p class="text-right">Banner ID:</p>
+
+                            </div>
+
+                            <div class="col-sm-3">
+                            <?php echo sprintf($_SESSION['bannerid']); ?>
+                            </div>
+
+        </div> <!-- row 2 ends -->
+
+    
+
+</div> <!-- Jumbotron 3 ends -->
+
 
 <div>
 
